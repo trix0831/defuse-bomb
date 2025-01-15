@@ -1,0 +1,186 @@
+/* Dark gray background and basic resets */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* dark gray */
+  font-family: Arial, sans-serif;
+}
+
+/* Center container */
+.container {
+  text-align: center;
+  margin-top: 50px;
+  color: #fff; /* White text on dark background */
+}
+
+/* Title styling */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Horizontal layout of buttons */
+.button-row {
+  display: inline-flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* 
+   Base button styling inspired by your snippet 
+   (now applied to .color-btn and override colors below)
+*/
+.color-btn {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #a29bfe;
+  cursor: pointer;
+}
+
+/* 
+   Simulated "pressed" effect class for both
+   mouse clicks and keyboard triggers
+*/
+.pressed {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
+/* Override background colors for each button */
+.red {
+  background-color: red;
+}
+.orange {
+  background-color: orange;
+}
+.yellow {
+  background-color: gold;
+  color: #333; /* Dark text so it's readable on yellow */
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.purple {
+  background-color: purple;
+}
+
+/* Try Again button can share styling or be slightly unique */
+.try-again {
+  margin-top: 20px;
+  background-color: #6c5ce7; /* Purple-ish */
+  box-shadow: 0px 5px 0px 0px #a29bfe;
+}
+
+/* Outcome dialog area */
+.outcome-dialog {
+  margin-top: 30px;
+}
+
+/* Larger, flashing outcome message */
+@keyframes flash {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.flash-green {
+  color: #55efc4; /* bright green */
+  animation: flash 1s infinite;
+  font-size: 3rem; /* Larger text */
+  font-weight: bold;
+}
+
+.flash-red {
+  color: #ff7675; /* bright red/pink */
+  animation: flash 1s infinite;
+  font-size: 3rem; /* Larger text */
+  font-weight: bold;
+}
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+.pyramid-loader {
+  position: relative;
+  width: 300px; /* 1.5x of 300px */
+  height: 300px; /* 1.5x of 300px */
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg);
+  margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.pyramid-loader .wrapper .side {
+  width: 105px; /* 1.5x of 70px */
+  height: 105px; /* 1.5x of 70px */
+  /* you can choose any gradient or color you want */
+  /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform-origin: center top;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pyramid-loader .wrapper .side1 {
+  transform: rotateZ(-30deg) rotateY(90deg);
+  background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .side2 {
+  transform: rotateZ(30deg) rotateY(90deg);
+  background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side3 {
+  transform: rotateX(30deg);
+  background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+}
+
+.pyramid-loader .wrapper .side4 {
+  transform: rotateX(-30deg);
+  background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+}
+
+.pyramid-loader .wrapper .shadow {
+  width: 90px; /* 1.5x of 60px */
+  height: 90px; /* 1.5x of 60px */
+  background: #8B5AD5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotateX(90deg) translateZ(-60px); /* Adjusted translateZ */
+  filter: blur(18px); /* Adjusted blur for proportional scaling */
+}
